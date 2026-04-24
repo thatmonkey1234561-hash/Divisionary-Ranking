@@ -3,36 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player Rankings</title>
+    <title>Ranking Dashboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Player Rankings</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Player</th>
-                <th>Score</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Player1</td>
-                <td>1500</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Player2</td>
-                <td>1400</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Player3</td>
-                <td>1300</td>
-            </tr>
-        </tbody>
-    </table>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Rankings</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <h1>Welcome to the Ranking Dashboard</h1>
+        <p>Your insights, your rankings!</p>
+    </header>
+    <main>
+        <section id="rankings">
+            <h2>Current Rankings</h2>
+            <table id="rankTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Score</th>
+                        <th>Tier</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>95</td>
+                        <td>Gold</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Doe</td>
+                        <td>90</td>
+                        <td>Silver</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="scoreFormula">
+            <h3>Score Formula</h3>
+            <p>The score is calculated based on the following criteria...</p>
+        </section>
+    </main>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some modal content...</p>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+    <script>
+        // Modal functionality
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById('myBtn');
+        var span = document.getElementsByClassName('close')[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
